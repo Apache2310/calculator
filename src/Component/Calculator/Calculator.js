@@ -6,6 +6,10 @@ const Calculator = () => {
 
     const handleButtonClick = (value) => {
         if (value === '=') {
+            if (input.trim() === '') {
+                setOutput('Error');
+                return;
+            }
             try {
                 const result = eval(input);
                 setOutput(result);
